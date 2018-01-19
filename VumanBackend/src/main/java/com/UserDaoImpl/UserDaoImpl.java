@@ -1,26 +1,52 @@
 package com.UserDaoImpl;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.Dao.UserDao;
 import com.model.User;
 
-public class UserDaoImpl implements UserDao{
+//@Repository("userDao")
+//@Transactional
+public class UserDaoImpl implements UserDao {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
 
-	List<User> users;
-	// This list is a subsitute for database
-	   public UserDaoImpl(){
-	      users = new ArrayList<User>();
-	      User user1 = new User("Robert@gmail.com");
-	      User user2 = new User("John@gmail.com");
-	      users.add(user1);
-	      users.add(user2);		
-	   }
-
-	public List<User> getAllUsers() {
-		return users;
-		
+	public UserDaoImpl(SessionFactory sessionFactory) {
+		super();
+		this.sessionFactory = sessionFactory;
 	}
+
+
+	public boolean save(User user) {
+		try {
+			//sessionFactory.getCurrentSession().save(user);
+		 Session session = sessionFactory.openSession();
+		 session.beginTransaction();
+		 session.save(user);
+		 session.getTransaction().commit();
+		 session.close();
+		 sessionFactory.close();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
+	// public List<User> userlist() {
+	//
+	// return sessionFactory.getCurrentSession().createQuery("from
+	// User").list();
+	// }
+
+	// public List<User> getAllUsers() {
+	// // TODO Auto-generated method stub
+	// return null;
+	// }
 
 }

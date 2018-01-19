@@ -2,22 +2,38 @@ package com.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="user_info")
 public class User implements Serializable
 {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	private int id;
 	private String email;
 	private String name;
 	private String password;
 	private String phone;
 	private String address;
 	
-	
-	public User(String email) {
+	public User() {
 		super();
-		this.email = email;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
