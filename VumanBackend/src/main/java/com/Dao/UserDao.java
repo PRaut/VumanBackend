@@ -1,5 +1,7 @@
 package com.Dao;
 
+import com.model.User;
+import java.util.List;
 public interface UserDao {
-	void show(String email, String name, String password, String phone, String address);
+	List<User> getAllUsers();
 }

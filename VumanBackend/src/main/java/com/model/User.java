@@ -12,6 +12,12 @@ public class User implements Serializable
 	private String password;
 	private String phone;
 	private String address;
+	
+	
+	public User(String email) {
+		super();
+		this.email = email;
+	}
 	public String getEmail() {
 		return email;
 	}
