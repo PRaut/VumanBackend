@@ -1,8 +1,7 @@
 package com.VumanBackend;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import java.util.Date;
+import java.util.List;
 
 import com.Dao.UserDao;
 import com.UserDaoImpl.UserDaoImpl;
@@ -10,25 +9,21 @@ import com.model.User;
 
 public class App {
 	public static void  main(String [] a) {	
-		User user = new User();
-		user.setName("John Dow");
-		user.setPassword("123");
-		user.setPhone("9898789654");
-		user.setAddress("Mumbai");
-		user.setEmail("john@gmail.com");
+		User user1 = new User();
+		user1.setName("Vina");
+		user1.setPassword("123");
+		user1.setPhone("789");
+		user1.setAddress("nag");
+		user1.setEmail("vina@gmail.com");
+		user1.setJoinDate(new Date());
 
-		SessionFactory sessionFactory =
-				new Configuration().configure().buildSessionFactory();
-		//Session session = sessionFactory.openSession();
-		//session.beginTransaction();
+		UserDao userDao = new UserDaoImpl();
+		userDao.insertUser(user1);
 		
-		//session.save(user);
-		UserDao userDao = new UserDaoImpl(sessionFactory);
-		userDao.save(user);
-		
-		//session.getTransaction().commit();
-		//session.close();
-		//sessionFactory.close();
+//		List<User> userList = userDao.getAllUsers();
+//		for(User user: userList){
+//			System.out.println("Name: "+ user.getName() +", Address: "+ user.getAddress());
+//		}
 		
 	} 
 	

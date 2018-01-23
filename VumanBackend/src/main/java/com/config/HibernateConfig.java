@@ -14,6 +14,8 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.model.User;
+
 @Configuration
 @ComponentScan(basePackages = { "com.VumanBackend" })
 @EnableTransactionManagement
@@ -27,6 +29,7 @@ public class HibernateConfig {
 		dataSource.setDriverClassName("org.h2.Driver");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
+		System.out.println("Accession Hibernate Config datasource");
 		return dataSource;
 	}
 
@@ -46,8 +49,9 @@ public class HibernateConfig {
 		System.out.println("Session object Created");
 		sessionBuilder.addProperties(getHibernateProperties());
 		System.out.println("Properties added");
-		// sessionBuilder.scanPackages("com.techcompany.Model");
-		// sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.scanPackages("com.Model");
+		System.out.println("Scan base package \' com.Model\'");
+		//sessionBuilder.addAnnotatedClass(User.class);
 		System.out.println("User class added");
 		return sessionBuilder.buildSessionFactory();
 	}
