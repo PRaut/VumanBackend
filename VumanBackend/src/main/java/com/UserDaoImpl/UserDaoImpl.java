@@ -29,9 +29,13 @@ public class UserDaoImpl implements UserDao {
 	}
 
 //	public List<User> getAllUsers() {
+//		config = new HibernateConfig();
 //		List<User> userList = new ArrayList<User>();
 //		Session session = config.getSessionFactory(config.getH2DataSource()).openSession();
-//		userList = session.createQuery("FROM user_info").list();
+//		session.beginTransaction();
+//		userList = .list(); 			// fetching of data pending
+//		session.getTransaction().commit();
+//		session.close();
 //		return userList;
 //	}
 

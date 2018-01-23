@@ -18,12 +18,12 @@ public class App {
 		user1.setJoinDate(new Date());
 
 		UserDao userDao = new UserDaoImpl();
-		userDao.insertUser(user1);
+		//userDao.insertUser(user1);
 		
-//		List<User> userList = userDao.getAllUsers();
-//		for(User user: userList){
-//			System.out.println("Name: "+ user.getName() +", Address: "+ user.getAddress());
-//		}
+		List<User> userList = userDao.getAllUsers();
+		for(User user: userList){
+			System.out.println("Name: "+ user.getName() +", Address: "+ user.getAddress());
+		}
 		
 	} 
 	
