@@ -29,7 +29,7 @@ public class HibernateConfig {
 		dataSource.setDriverClassName("org.h2.Driver");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
-		System.out.println("Accession Hibernate Config datasource");
+		System.out.println("Accessing Hibernate Config datasource");
 		return dataSource;
 	}
 
