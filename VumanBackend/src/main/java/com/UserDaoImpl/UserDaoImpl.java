@@ -28,6 +28,28 @@ public class UserDaoImpl implements UserDao {
 		session.close();
 		return true;
 	}
+	
+	public void updateUser(User user){
+		config = new HibernateConfig();
+		Session session = config.getSessionFactory(config.getH2DataSource())
+				.openSession();
+		session.beginTransaction();
+		
+		session.update(user);
+		
+		session.getTransaction().commit();
+		session.close();
+		
+	}
+	
+	public void deleteUser(User user){
+		config = new HibernateConfig();
+		Session session = config.getSessionFactory(config.getH2DataSource()).openSession();
+		session.beginTransaction();
+		session.delete(user);
+		session.getTransaction().commit();
+		session.close();
+	}
 
 	public List<User> getAllUsers() {
 		config = new HibernateConfig();
