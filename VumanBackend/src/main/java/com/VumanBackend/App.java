@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.Dao.UserDao;
-import com.UserDaoImpl.UserDaoImpl;
+import com.DaoImpl.UserDaoImpl;
 import com.model.User;
 
 public class App {
@@ -17,7 +17,7 @@ public class App {
 		user1.setEmail("pallavi@gmail.com");
 		user1.setJoinDate(new Date());
 
-		UserDao userDao = new UserDaoImpl();
+		//UserDao userDao = new UserDaoImpl();
 
 //		insert single user
 //		userDao.insertUser(user1);

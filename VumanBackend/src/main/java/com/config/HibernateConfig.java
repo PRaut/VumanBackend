@@ -14,10 +14,12 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.model.User;
+import com.DaoImpl.CategoryDaoImpl;
+import com.DaoImpl.SupplierDaoImpl;
+import com.DaoImpl.UserDaoImpl;
 
 @Configuration
-@ComponentScan(basePackages = { "com.VumanBackend" })
+@ComponentScan(basePackages = { "com" })
 @EnableTransactionManagement
 public class HibernateConfig {
 
@@ -49,13 +51,32 @@ public class HibernateConfig {
 		System.out.println("Session object Created");
 		sessionBuilder.addProperties(getHibernateProperties());
 		System.out.println("Properties added");
+		
 		sessionBuilder.scanPackages("com.Model");
 		System.out.println("Scan base package \' com.Model\'");
 		//sessionBuilder.addAnnotatedClass(User.class);
 		System.out.println("User class added");
 		return sessionBuilder.buildSessionFactory();
 	}
+	
+	@Autowired
+	@Bean(name="supplierDaoImpl")
+	public SupplierDaoImpl getSuppData(SessionFactory sf){
+		return new SupplierDaoImpl(sf);
+	}
 
+	@Autowired
+	@Bean(name="categoryDaoImpl")
+	public CategoryDaoImpl getCategoryData(SessionFactory sf){
+		return new CategoryDaoImpl(sf);
+	}
+	
+	@Autowired
+	@Bean(name="userDaoImpl")
+	public UserDaoImpl getUserData(SessionFactory sf){
+		return new UserDaoImpl(sf); 
+	}
+	
 	@Autowired
 	@Bean(name = ("transactionManager"))
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
