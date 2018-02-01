@@ -1,4 +1,4 @@
-package com.VumanBackend;
+package com.VumanBackend.User;
 
 import static org.junit.Assert.assertTrue;
 
@@ -16,7 +16,7 @@ import com.model.User;
 public class TestInsertUser {
 
 	private static UserDao userDao;
-	private static SessionFactory sessionFactory;
+	//private static SessionFactory sessionFactory;
 	private  static HibernateConfig config;
 	//private Session session;
 	
@@ -31,7 +31,7 @@ public class TestInsertUser {
 	@Test
 	public void testInsertUser(){
 		User user = new User();
-		user.setName("test2");
+		user.setName("test3");
 		user.setPassword("123456");
 		user.setPhone("98968635");
 		user.setAddress("TestAddress2");

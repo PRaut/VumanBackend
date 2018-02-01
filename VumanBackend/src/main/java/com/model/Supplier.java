@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Supplier {
 	@Id
-	@GeneratedValue
 	private String sid;
 	
 	private String supplierName;
