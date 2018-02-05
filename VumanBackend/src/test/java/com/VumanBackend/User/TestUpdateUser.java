@@ -33,7 +33,7 @@ public class TestUpdateUser {
 //		session.beginTransaction();
 //		User user = session.get(User.class, 8); 
 		User user = new User();
-		user.setId(16);
+		user.setId(54);
 		user.setName("Vina");
 		user.setEmail("vina@gmail.com");
 		user.setAddress("nag");
