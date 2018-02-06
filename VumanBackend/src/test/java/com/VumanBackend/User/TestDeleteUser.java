@@ -29,7 +29,7 @@ public class TestDeleteUser {
 		User user = new User();
 		user.setId(17);
 
-		userDao.deleteUser(user);
+		//userDao.deleteUser(user);
 
 	}
 }

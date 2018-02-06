@@ -21,7 +21,7 @@ public class TestGetUserById {
 	
 	 @Test
 	 public void testGetUser() {
-	 User user = (User) userDao.getUser(new Integer(54));
+	 User user = (User) userDao.getUser(new Integer(2));
 	 System.out.println("ID: " + user.getId() + ", Name: " + user.getName());
 	 }
 }

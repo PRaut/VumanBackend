@@ -39,7 +39,7 @@ public class TestDeleteProduct {
 		product.setSupplier(supplier);
 		product.setImageName("kurta");
 
-		productDao.deleteProduct(product);
+		//productDao.deleteProduct(product);
 
 	}
 }

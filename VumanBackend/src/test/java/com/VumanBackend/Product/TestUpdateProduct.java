@@ -23,7 +23,7 @@ public class TestUpdateProduct {
 	@Test
 	public void testUpdateProduct(){
 		Product product = new Product();
-		product.setPid(44);
+		product.setPid(3);
 		product.setProductName("Saree");
 		product.setProductDescription("Kerala Sarees");
 		product.setPrice(3000.50f);

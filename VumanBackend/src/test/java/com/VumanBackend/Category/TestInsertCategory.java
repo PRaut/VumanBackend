@@ -25,6 +25,6 @@ public class TestInsertCategory {
 		category.setCid("1");
 		category.setCname("Sarees");
 		
-		categoryDao.insertCategory(category);
+		//categoryDao.insertCategory(category);
 	}
 }

@@ -39,7 +39,7 @@ public class TestInsertProduct {
 		product.setSupplier(supplier);
 		product.setImageName("kurta");
 		
-		productDao.insertProduct(product);
+		//productDao.insertProduct(product);
 
 	}
 }

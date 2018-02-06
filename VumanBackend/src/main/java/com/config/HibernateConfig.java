@@ -40,7 +40,7 @@ public class HibernateConfig {
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		properties.put("hibernate.show_sql", "true");
-		properties.put("hibernate.hbm2ddl.auto", "update");
+		properties.put("hibernate.hbm2ddl.auto", "update");  // change to update after all complete
 		System.out.println("Hibernate Properties created");
 		return properties;
 	}

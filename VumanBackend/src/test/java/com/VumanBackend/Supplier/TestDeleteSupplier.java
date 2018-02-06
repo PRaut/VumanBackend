@@ -22,7 +22,7 @@ public class TestDeleteSupplier {
 		Supplier supplier = new Supplier();
 		supplier.setSid("1");
 		supplier.setSupplierName("Updated Supp");
-		supplierDao.deleteSupplier(supplier);
+		//supplierDao.deleteSupplier(supplier);
 	}
 	
 }

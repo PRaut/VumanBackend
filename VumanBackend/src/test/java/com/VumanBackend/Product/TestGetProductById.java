@@ -27,7 +27,7 @@ public class TestGetProductById {
 	public void testGetProductById() {
 		// expected product for comparison
 		Product product = new Product();
-		product.setPid(44);
+		product.setPid(3);
 		product.setProductName("Kurta");
 		product.setProductDescription("Authentic Kurta");
 		product.setPrice(3000.50f);
@@ -46,7 +46,7 @@ public class TestGetProductById {
 
 		
 		// actual product
-		Product acProduct = productDao.getProduct(44);
+		Product acProduct = productDao.getProduct(3);
 		assertEquals(product.getPid(), acProduct.getPid());
 		//System.out.println(acProduct.getPid() + " "+ acProduct.getProductName());
 
