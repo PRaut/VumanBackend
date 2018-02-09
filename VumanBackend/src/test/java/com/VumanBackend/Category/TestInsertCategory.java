@@ -1,6 +1,7 @@
 package com.VumanBackend.Category;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.Dao.CategoryDao;
@@ -13,12 +14,14 @@ public class TestInsertCategory {
 	private static HibernateConfig config;
 	private static CategoryDao categoryDao;
 	
+	@Ignore
 	@BeforeClass
 	public static void setUp(){
 		config = new HibernateConfig();
-		categoryDao = new CategoryDaoImpl(config.getSessionFactory(config.getH2DataSource()));
+		//categoryDao = new CategoryDaoImpl(config.getSessionFactory(config.getH2DataSource()));
 	}
 	
+	@Ignore
 	@Test
 	public void testInsertCategory(){
 		Category category  = new Category();

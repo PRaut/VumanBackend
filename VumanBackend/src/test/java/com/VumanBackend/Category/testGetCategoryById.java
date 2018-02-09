@@ -1,8 +1,9 @@
 package com.VumanBackend.Category;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.Dao.CategoryDao;
@@ -14,12 +15,14 @@ public class testGetCategoryById {
 	private static HibernateConfig config;
 	private static CategoryDao categoryDao;
 
+	@Ignore
 	@BeforeClass
 	public static void setUp() {
 		config = new HibernateConfig();
-		categoryDao = new CategoryDaoImpl(config.getSessionFactory(config.getH2DataSource()));
+		//categoryDao = new CategoryDaoImpl(config.getSessionFactory(config.getH2DataSource()));
 	}
 	
+	@Ignore
 	@Test
 	public void testGetCategoryById(){
 		Category category = categoryDao.getCategory("1");

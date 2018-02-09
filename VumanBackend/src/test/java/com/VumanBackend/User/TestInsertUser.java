@@ -39,7 +39,7 @@ public class TestInsertUser {
 		user.setJoinDate(new Date());
 		
 		//assertTrue(userDao.insertUser(user));
-		userDao.insertUser(user);
+		//userDao.insertUser(user);
 	}
 
 }

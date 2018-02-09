@@ -63,24 +63,28 @@ public class HibernateConfig {
 	@Autowired
 	@Bean(name="supplierDaoImpl")
 	public SupplierDaoImpl getSuppData(SessionFactory sf){
+		System.out.println("in suppDaoImpl config");
 		return new SupplierDaoImpl(sf);
 	}
 
 	@Autowired
 	@Bean(name="categoryDaoImpl")
 	public CategoryDaoImpl getCategoryData(SessionFactory sf){
+		System.out.println("in catDaoImpl config");
 		return new CategoryDaoImpl(sf);
 	}
 	
 	@Autowired
 	@Bean(name="userDaoImpl")
 	public UserDaoImpl getUserData(SessionFactory sf){
+		System.out.println("in userDaoImpl config");
 		return new UserDaoImpl(sf); 
 	}
 	
 	@Autowired
 	@Bean(name="productDaoImpl")
 	public ProductDaoImpl getProductData(SessionFactory sf){
+		System.out.println("in prdDaoImpl config");
 		return new ProductDaoImpl(sf);
 	}
 	

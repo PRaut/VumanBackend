@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import com.Dao.ProductDao;
 import com.model.Product;
 
-@Repository
+@Repository("productDao")
 @Service
 public class ProductDaoImpl implements ProductDao {
 	
