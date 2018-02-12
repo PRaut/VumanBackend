@@ -25,9 +25,11 @@ public class ProductDaoImpl implements ProductDao {
 	public ProductDaoImpl(SessionFactory sessionFactory) {
 		super();
 		this.sessionFactory = sessionFactory;
+		System.out.println("4> in prDaoImpl const.");
 	}
+	
 
-	@Transactional
+	//@Transactional
 	public void insertProduct(Product product) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -36,7 +38,7 @@ public class ProductDaoImpl implements ProductDao {
 		session.close();
 	}
 	
-	@Transactional
+	//@Transactional
 	public void updateProduct(Product product) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -46,7 +48,7 @@ public class ProductDaoImpl implements ProductDao {
 		
 	}
 
-	@Transactional
+	//@Transactional
 	public void deleteProduct(Product product) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -55,7 +57,7 @@ public class ProductDaoImpl implements ProductDao {
 		session.close();
 	}
 
-	@Transactional
+	//@Transactional
 	public Product getProduct(int id) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -65,7 +67,7 @@ public class ProductDaoImpl implements ProductDao {
 		return product;
 	}
 
-	@Transactional
+	//@Transactional
 	public List<Product> getAllProducts() {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();

@@ -2,6 +2,8 @@ package com.Dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.model.Category;
 import com.model.User;
 

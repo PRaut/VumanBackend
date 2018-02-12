@@ -12,31 +12,35 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.Dao.SupplierDao;
+import com.config.HibernateConfig;
 import com.model.Supplier;
 
 @Repository("supplierDao")
 @Service
 public class SupplierDaoImpl implements SupplierDao{
 
-	@Autowired
+	//@Autowired
 	SessionFactory sessionFactory;
 	
 	@Autowired
 	public SupplierDaoImpl(SessionFactory sessionFactory) {
 		super();
 		this.sessionFactory = sessionFactory;
+		System.out.println("1> in supplDaoImpl const.");
 	}
 
-	@Transactional
+	//@Transactional
 	public void insertSupplier(Supplier supplier) {
-		Session session = sessionFactory.openSession();
+		//HibernateConfig config = new HibernateConfig();
+		//Session session = config.getSessionFactory(config.getH2DataSource()).openSession();
+		Session  session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.saveOrUpdate(supplier);
 		session.getTransaction().commit();
 		session.close();
 	}
 
-	@Transactional
+	//@Transactional
 	public void updateSupplier(Supplier supplier) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -45,7 +49,7 @@ public class SupplierDaoImpl implements SupplierDao{
 		session.close();
 	}
 
-	@Transactional
+	//@Transactional
 	public void deleteSupplier(Supplier supplier) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -53,7 +57,7 @@ public class SupplierDaoImpl implements SupplierDao{
 		session.getTransaction().commit();
 	}
 	
-	@Transactional
+	//@Transactional
 	public List<Supplier> getAllSuppliers(){
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -63,7 +67,7 @@ public class SupplierDaoImpl implements SupplierDao{
 		return supplierList;
 	}
 
-	@Transactional
+	//@Transactional
 	public Supplier getSupplier(String id) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();

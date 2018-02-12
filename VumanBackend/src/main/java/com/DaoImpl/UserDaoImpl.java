@@ -23,26 +23,15 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	SessionFactory sessionFactory;
 
-	// public boolean insertUser(User user) {
-	// config = new HibernateConfig();
-	//
-	// Session session =
-	// config.getSessionFactory(config.getH2DataSource()).openSession();
-	// session.beginTransaction();
-	// session.save(user);
-	// session.getTransaction().commit();
-	// session.close();
-	//
-	// return true;
-	// }
-
-	@Autowired
+	//@Autowired
 	public UserDaoImpl(SessionFactory sessionFactory) {
 		super();
 		this.sessionFactory = sessionFactory;
+		System.out.println("3> in userDaoImpl const.");
 	}
+	
 
-	@Transactional
+	//@Transactional
 	public void insertUser(User user) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -55,7 +44,7 @@ public class UserDaoImpl implements UserDao {
 		session.close();
 	}
 
-	@Transactional
+	//@Transactional
 	public void updateUser(User user) {
 		// config = new HibernateConfig();
 		Session session = sessionFactory.openSession();
@@ -78,7 +67,7 @@ public class UserDaoImpl implements UserDao {
 		session.close();
 	}
 
-	@Transactional
+	//@Transactional
 	public List<User> getAllUsers() {
 		// config = new HibernateConfig();
 		List<User> userList = new ArrayList<User>();
@@ -96,7 +85,7 @@ public class UserDaoImpl implements UserDao {
 		return userList;
 	}
 
-	@Transactional
+	//@Transactional
 	public User getUser(int id) {
 		// config = new HibernateConfig();
 		Session session = sessionFactory.openSession();

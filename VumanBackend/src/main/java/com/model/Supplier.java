@@ -1,5 +1,6 @@
 package com.model;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class Supplier {
+public class Supplier implements Serializable {
 	@Id
 	private String sid;
 	

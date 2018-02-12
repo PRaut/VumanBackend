@@ -18,12 +18,16 @@ import com.DaoImpl.CategoryDaoImpl;
 import com.DaoImpl.ProductDaoImpl;
 import com.DaoImpl.SupplierDaoImpl;
 import com.DaoImpl.UserDaoImpl;
+import com.model.Category;
+import com.model.Product;
+import com.model.Supplier;
+import com.model.User;
 
 @Configuration
 @ComponentScan(basePackages = { "com" })
 @EnableTransactionManagement
 public class HibernateConfig {
-
+	
 	@Bean(name = "datasource")
 	public DataSource getH2DataSource() {
 
@@ -55,7 +59,12 @@ public class HibernateConfig {
 		
 		sessionBuilder.scanPackages("com.Model");
 		System.out.println("Scan base package \' com.Model\'");
-		//sessionBuilder.addAnnotatedClass(User.class);
+		
+		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Product.class);
+		sessionBuilder.addAnnotatedClass(Category.class);
+		
 		System.out.println("User class added");
 		return sessionBuilder.buildSessionFactory();
 	}
@@ -63,28 +72,28 @@ public class HibernateConfig {
 	@Autowired
 	@Bean(name="supplierDaoImpl")
 	public SupplierDaoImpl getSuppData(SessionFactory sf){
-		System.out.println("in suppDaoImpl config");
+		System.out.println("1> in suppDaoImpl config");
 		return new SupplierDaoImpl(sf);
 	}
 
 	@Autowired
 	@Bean(name="categoryDaoImpl")
 	public CategoryDaoImpl getCategoryData(SessionFactory sf){
-		System.out.println("in catDaoImpl config");
+		System.out.println("2> in catDaoImpl config");
 		return new CategoryDaoImpl(sf);
 	}
 	
 	@Autowired
 	@Bean(name="userDaoImpl")
 	public UserDaoImpl getUserData(SessionFactory sf){
-		System.out.println("in userDaoImpl config");
+		System.out.println("3> in userDaoImpl config");
 		return new UserDaoImpl(sf); 
 	}
 	
 	@Autowired
 	@Bean(name="productDaoImpl")
 	public ProductDaoImpl getProductData(SessionFactory sf){
-		System.out.println("in prdDaoImpl config");
+		System.out.println("4> in prdDaoImpl config");
 		return new ProductDaoImpl(sf);
 	}
 	

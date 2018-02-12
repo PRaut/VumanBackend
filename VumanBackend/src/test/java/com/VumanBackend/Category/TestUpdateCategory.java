@@ -24,7 +24,7 @@ public class TestUpdateCategory {
 	@Test
 	public void testUpdateCategory(){
 		Category category = new Category();
-		category.setCid("1");
+		//category.setCid("1");
 		category.setCname("Dress");
 		
 		categoryDao.updateCategory(category);

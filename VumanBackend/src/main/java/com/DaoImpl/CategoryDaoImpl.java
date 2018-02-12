@@ -26,10 +26,10 @@ public class CategoryDaoImpl implements CategoryDao {
 	public CategoryDaoImpl(SessionFactory sessionFactory) {
 		super();
 		this.sessionFactory = sessionFactory;
-		System.out.println("in catDaoImpl const.");
+		System.out.println("2> in catDaoImpl const.");
 	}
-
-	@Transactional
+	
+	//@Transactional
 	public void insertCategory(Category category) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -39,7 +39,7 @@ public class CategoryDaoImpl implements CategoryDao {
 
 	}
 
-	@Transactional
+	//@Transactional
 	public void updateCategory(Category category) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -48,7 +48,7 @@ public class CategoryDaoImpl implements CategoryDao {
 		session.close();
 	}
 
-	@Transactional
+	//@Transactional
 	public void deleteCategory(Category category) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -57,7 +57,7 @@ public class CategoryDaoImpl implements CategoryDao {
 		session.close();
 	}
 
-	@Transactional
+	//@Transactional
 	public Category getCategory(String id) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
@@ -67,7 +67,7 @@ public class CategoryDaoImpl implements CategoryDao {
 		return category;
 	}
 
-	@Transactional
+	//@Transactional
 	public List<Category> getAllCategories() {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
