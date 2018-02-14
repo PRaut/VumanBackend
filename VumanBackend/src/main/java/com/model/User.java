@@ -25,24 +25,9 @@ public class User implements Serializable {
 	private String password;
 	private String phone;
 	private String address;
-//	private String role;
-//	private boolean enabled;
-//	
-//	public String getRole() {
-//		return role;
-//	}
-//
-//	public void setRole(String role) {
-//		this.role = role;
-//	}
-//
-//	public boolean getEnabled() {
-//		return enabled;
-//	}
-//
-//	public void setEnabled(boolean enabled) {
-//		this.enabled = enabled;
-//	}
+	private String role;  // maintaing ROLE
+	private boolean enabled;  // Account Enabled/Disabled check
+	
 
 	@Temporal(TemporalType.DATE)
 	private Date joinDate;
@@ -105,5 +90,21 @@ public class User implements Serializable {
 
 	public void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 }
