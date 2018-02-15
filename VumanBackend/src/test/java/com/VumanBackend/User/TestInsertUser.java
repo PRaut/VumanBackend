@@ -31,15 +31,15 @@ public class TestInsertUser {
 	@Test
 	public void testInsertUser(){
 		User user = new User();
-		user.setName("test3");
+		user.setName("pr");
 		user.setPassword("123456");
 		user.setPhone("98968635");
 		user.setAddress("TestAddress2");
-		user.setEmail("test2@gmail.com");
-		user.setJoinDate(new Date());
+		user.setEmail("pr@gmail.com");
+		//user.setJoinDate(new Date());
 		
 		//assertTrue(userDao.insertUser(user));
-		//userDao.insertUser(user);
+		userDao.insertUser(user);
 	}
 
 }

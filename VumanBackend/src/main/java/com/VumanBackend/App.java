@@ -15,7 +15,7 @@ public class App {
 		user1.setPhone("7145");
 		user1.setAddress("mum");
 		user1.setEmail("pallavi@gmail.com");
-		user1.setJoinDate(new Date());
+		//user1.setJoinDate(new Date());
 
 		//UserDao userDao = new UserDaoImpl();
 

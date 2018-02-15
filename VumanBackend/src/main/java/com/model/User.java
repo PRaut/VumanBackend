@@ -29,8 +29,8 @@ public class User implements Serializable {
 	private boolean enabled;  // Account Enabled/Disabled check
 	
 
-	@Temporal(TemporalType.DATE)
-	private Date joinDate;
+//	@Temporal(TemporalType.DATE)
+//	private Date joinDate;
 
 	public User() {
 		super();
@@ -84,13 +84,13 @@ public class User implements Serializable {
 		this.address = address;
 	}
 
-	public Date getJoinDate() {
-		return joinDate;
-	}
-
-	public void setJoinDate(Date joinDate) {
-		this.joinDate = joinDate;
-	}
+//	public Date getJoinDate() {
+//		return joinDate;
+//	}
+//
+//	public void setJoinDate(Date joinDate) {
+//		this.joinDate = joinDate;
+//	}
 	
 	public String getRole() {
 		return role;

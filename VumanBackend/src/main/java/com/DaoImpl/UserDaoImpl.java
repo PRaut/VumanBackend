@@ -57,7 +57,7 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
-	@Transactional
+	//@Transactional
 	public void deleteUser(User user) {
 		// config = new HibernateConfig();
 		Session session = sessionFactory.openSession();
