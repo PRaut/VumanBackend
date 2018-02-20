@@ -8,14 +8,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Service;
 
 import com.Dao.UserDao;
 import com.config.HibernateConfig;
 import com.model.User;
 
 @Repository("userDao")
-@Transactional
+@Service	
 public class UserDaoImpl implements UserDao {
 
 	private HibernateConfig config;
