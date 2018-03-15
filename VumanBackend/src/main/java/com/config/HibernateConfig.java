@@ -14,11 +14,15 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.DaoImpl.CartDaoImpl;
 import com.DaoImpl.CategoryDaoImpl;
+import com.DaoImpl.OrdersDaoImpl;
 import com.DaoImpl.ProductDaoImpl;
 import com.DaoImpl.SupplierDaoImpl;
 import com.DaoImpl.UserDaoImpl;
+import com.model.Cart;
 import com.model.Category;
+import com.model.Orders;
 import com.model.Product;
 import com.model.Supplier;
 import com.model.User;
@@ -64,11 +68,23 @@ public class HibernateConfig {
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
+		sessionBuilder.addAnnotatedClass(Cart.class);
+		sessionBuilder.addAnnotatedClass(Orders.class);
 		
 		System.out.println("User class added");
 		return sessionBuilder.buildSessionFactory();
 	}
+		
+	@Autowired
+	@Bean(name = ("transactionManager"))
+	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
+		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
+
+		return transactionManager;
+	}
 	
+	
+	// Required Beans
 	@Autowired
 	@Bean(name="supplierDaoImpl")
 	public SupplierDaoImpl getSuppData(SessionFactory sf){
@@ -98,10 +114,17 @@ public class HibernateConfig {
 	}
 	
 	@Autowired
-	@Bean(name = ("transactionManager"))
-	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
-
-		return transactionManager;
+	@Bean(name="cartDaoImpl")
+	public CartDaoImpl getCartData(SessionFactory sf){
+		System.out.println("5> in cartDaoImpl config");
+		return new CartDaoImpl(sf);
 	}
+	
+	@Autowired
+	@Bean(name="ordersDaoImpl")
+	public OrdersDaoImpl getOrdersData(SessionFactory sf){
+		System.out.println("6> in ordersDaoImpl config");
+		return new OrdersDaoImpl(sf);
+	}
+
 }

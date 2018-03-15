@@ -14,4 +14,6 @@ public interface UserDao {
 	User getUser(int id);
 
 	List<User> getAllUsers();
+	
+	User getUserByEmail(String email);
 }
